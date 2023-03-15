@@ -15,9 +15,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-zinc-900 text-zinc-200 ">
-        <div className="border-2 border-green-500  flex flex-col h-screen w-screen ">
+        <div className=" flex flex-col h-screen w-screen overflow-hidden ">
           <TopNav />
-          <div className="flex flex-1 lg:flex-row">
+          <div className="flex flex-1">
             <SideNav />
             {children}
           </div>
