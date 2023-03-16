@@ -20,10 +20,14 @@ const MenuItem: Array<MenuItem> = [
 function SideNav() {
   const pathname = usePathname();
   return (
-    <div className="p-1 lg:px-2  lg:w-[200px]">
+    <div className="p-1 lg:px-2 lg:w-[200px]">
       {MenuItem.map((item) => (
         <Link key={item.name} href={item.pathname}>
-          <div className="flex flex-col lg:flex-row p-4 lg:py-3 gap-1 lg:gap-6 items-center hover:bg-zinc-700 hover:rounded-2xl">
+          <div
+            className={`flex flex-col lg:flex-row p-4 lg:py-3 gap-1 lg:gap-6 items-center hover:bg-zinc-700 rounded-2xl cursor-pointer ${
+              item.pathname === pathname && "bg-zinc-600"
+            }`}
+          >
             <item.icon size={25} />
             <span className="text-xs">{item.name}</span>
           </div>
