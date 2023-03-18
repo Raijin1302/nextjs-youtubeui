@@ -10,7 +10,7 @@ function TopNav() {
   console.log(searchTerm);
 
   return (
-    <div className="flex justify-between items-center border-2 border-red-400 p-4">
+    <div className="flex justify-between items-center border-2 border-red-400 p-4 ">
       <div className="flex items-center gap-6 ">
         <HiOutlineMenu size={26} />
         <div className="flex items-center gap-1">

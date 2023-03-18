@@ -15,12 +15,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-zinc-900 text-zinc-200 ">
-        <div className=" flex flex-col h-screen w-screen overflow-x-hidden">
+        <div className=" flex flex-col h-[calc(100vh-72px)] overflow-y-scroll hide-scrollbar">
           <TopNav />
           <div className="flex flex-1 ">
-            <div className="">
-              <SideNav />
-            </div>
+            <SideNav />
             <div>{children}</div>
           </div>
         </div>

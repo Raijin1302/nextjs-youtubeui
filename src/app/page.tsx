@@ -14,12 +14,9 @@ const inter = Inter({ subsets: ["latin"] });
 // };
 export default function Home() {
   return (
-    <div className="flex flex-col gap-3 flex-1 py-0 lg:px-24 2xl:px-12 px-32 mt-3 md:mx-auto w-full flex-wrap lg:flex-row  ">
+    <div className="flex flex-col gap-3 flex-1 w-full flex-wrap lg:flex-row sm:pl-24 md:pl-32 pl-8 sm:justify-start justify-center ">
       {feedVideos.map((video) => (
-        <div
-          key={video.title}
-          className="flex flex-col gap-3 2xl:w-[300px] lg:w-[400px] w-[600px] p-4 "
-        >
+        <div key={video.title} className="flex flex-col gap-3 w-[300px] p-4 ">
           <Image
             src={video.thumbnailUrl}
             alt="thumbnailUrl"
@@ -33,7 +30,7 @@ export default function Home() {
                 height={40}
                 width={40}
                 alt="user image"
-                className="rounded-full object-contain "
+                className="rounded-full object-center "
               />
             </div>
             <div className="flex flex-col gap-1 flex-1">

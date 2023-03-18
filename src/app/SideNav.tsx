@@ -44,16 +44,18 @@ const MenuItem: Array<MenuItem> = [
 function SideNav() {
   const pathname = usePathname();
   return (
-    <div className="p-1 lg:px-2 lg:w-[200px]">
+    <div className="p-1 lg:px-2 xl:w-[200px] w-[100px]">
       {MenuItem.map((item) => (
         <Link key={item.name} href={item.pathname}>
           <div
-            className={`flex flex-col lg:flex-row p-4 lg:py-3 gap-1 lg:gap-6 items-center hover:bg-zinc-700 rounded-md cursor-pointer ${
+            className={`flex flex-col xl:flex-row p-4 xl:py-3 gap-1 xl:gap-6 items-center hover:bg-zinc-700 rounded-md cursor-pointer ${
               item.pathname === pathname && "bg-zinc-600 "
             }`}
           >
             <item.icon size={25} />
-            <span className="text-xs">{item.name}</span>
+            <span className="text-xs xl:text-start text-center">
+              {item.name}
+            </span>
           </div>
         </Link>
       ))}

@@ -1,13 +1,10 @@
 import React, { FC } from "react";
 
-interface PageProps {
+type PageProps = {
   params: { pathname: string };
-}
-const PathnamePage: FC<PageProps> = ({ params }) => {
-  const { pathname } = params;
-  console.log(params);
-
-  return <div>PathnamePage {pathname}</div>;
 };
+function PathnamePage({ params: { pathname } }: PageProps) {
+  return <div>PathnamePage {pathname}</div>;
+}
 
 export default PathnamePage;
