@@ -48,8 +48,8 @@ function SideNav() {
       {MenuItem.map((item) => (
         <Link key={item.name} href={item.pathname}>
           <div
-            className={`flex flex-col lg:flex-row p-4 lg:py-3 gap-1 lg:gap-6 items-center hover:bg-zinc-700 rounded-md  cursor-pointer ${
-              item.pathname === pathname && "bg-zinc-600"
+            className={`flex flex-col lg:flex-row p-4 lg:py-3 gap-1 lg:gap-6 items-center hover:bg-zinc-700 rounded-md cursor-pointer ${
+              item.pathname === pathname && "bg-zinc-600 "
             }`}
           >
             <item.icon size={25} />
