@@ -12,13 +12,35 @@ const inter = Inter({ subsets: ["latin"] });
 
 //   return data;
 // };
-export default function Home() {
+
+const fetchData = async () => {
+  const res = await fetch(
+    `${process.env.BASE_URL}/search?part=snippet&q=New&part=snippet%2Cid&regionCode=US&maxResults=50&order=date`,
+    {
+      method: "GET",
+      headers: {
+        "X-RapidAPI-Key": `${process.env.API_KEY}`,
+      },
+    }
+  );
+
+  const data = await res.json();
+
+  return data.items;
+};
+
+export default async function Home() {
+  const data = await fetchData();
+
   return (
     <div className="flex flex-col gap-3 flex-1 w-full flex-wrap lg:flex-row sm:pl-24 md:pl-32 pl-8 sm:justify-start justify-center ">
-      {feedVideos.map((video) => (
-        <div key={video.title} className="flex flex-col gap-3 w-[300px] p-4 ">
+      {data.map((video: any, index: any) => (
+        <div
+          key={video?.id?.videoId}
+          className="flex flex-col gap-3 w-[300px] p-4 "
+        >
           <Image
-            src={video.thumbnailUrl}
+            src={video?.snippet?.thumbnails?.high?.url}
             alt="thumbnailUrl"
             height={200}
             width={600}
@@ -42,7 +64,7 @@ export default function Home() {
                 <div className="flex gap-1">
                   <span>{video.viewCount}</span>
                   <span>.</span>
-                  <span>{video.createdAt.toDateString()}</span>
+                  <span>{video?.snippet?.publishedAt}</span>
                 </div>
               </div>
             </div>

@@ -7,8 +7,6 @@ import Image from "next/image";
 function TopNav() {
   const [searchTerm, setSearchTerm] = useState("");
 
-  console.log(searchTerm);
-
   return (
     <div className="flex justify-between items-center border-2 border-red-400 p-4 ">
       <div className="flex items-center gap-6 ">
