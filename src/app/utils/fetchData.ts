@@ -2,12 +2,6 @@ const BASE_URL = "https://youtube-v31.p.rapidapi.com";
 const options = {
   method: "GET",
   url: BASE_URL,
-  params: {
-    part: "snippet,id",
-    regionCode: "US",
-    maxResults: "50",
-    order: "date",
-  },
   headers: {
     "X-RapidAPI-Key": `${process.env.API_KEY}`,
     "X-RapidAPI-Host": "youtube-v31.p.rapidapi.com",

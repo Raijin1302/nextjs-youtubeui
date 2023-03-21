@@ -5,16 +5,15 @@ import fetchData from "./utils/fetchData";
 const inter = Inter({ subsets: ["latin"] });
 export default async function Home() {
   const data = await fetchData(
-    `search?part=snippet&q=New&regionCode=VN&maxResults=50&order=date`
+    `search?part=snippet&q=us&regionCode=VN&maxResults=50&order=date`
   );
 
+  const { items } = data;
+
   return (
-    <div className="flex flex-col gap-3 flex-1 w-full flex-wrap lg:flex-row sm:pl-24 md:pl-32 pl-8 sm:justify-start justify-center ">
+    <div className="grid 2xl:grid-cols-5 xl:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-3 w-full h-auto sm:pr-none pr-8 ">
       {data?.items.map((video: any) => (
-        <div
-          key={video?.id?.videoId}
-          className="flex flex-col gap-3 w-[300px] p-4 "
-        >
+        <div key={video?.id?.videoId} className="flex flex-col gap-4 p-4 ">
           <Image
             src={video?.snippet?.thumbnails?.high?.url}
             alt="thumbnailUrl"
@@ -33,13 +32,15 @@ export default async function Home() {
             </div>
             <div className="flex flex-col gap-1 flex-1">
               <div>
-                <h3 className="font-semibold text-white">{video.title}</h3>
+                <h3 className="font-semibold text-white">
+                  {video?.snippet?.title}
+                </h3>
               </div>
               <div className="text-sm text-zinc-400">
                 <a href="">{video.channelName}</a>
                 <div className="flex gap-1">
                   <span>{video.viewCount}</span>
-                  <span>.</span>
+                  <span>·</span>
                   <span>{video?.snippet?.publishedAt}</span>
                 </div>
               </div>
