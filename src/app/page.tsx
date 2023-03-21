@@ -1,40 +1,16 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import { feedVideos } from "./utils/data";
+import fetchData from "./utils/fetchData";
 const inter = Inter({ subsets: ["latin"] });
-// const fetchData = async () => {
-//   const res = await fetch(
-//     `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.API_KEY}`,
-//     { cache: "no-store" }
-//   );
-
-//   const data = await res.json();
-
-//   return data;
-// };
-
-const fetchData = async () => {
-  const res = await fetch(
-    `${process.env.BASE_URL}/search?part=snippet&q=New&part=snippet%2Cid&regionCode=US&maxResults=50&order=date`,
-    {
-      method: "GET",
-      headers: {
-        "X-RapidAPI-Key": `${process.env.API_KEY}`,
-      },
-    }
-  );
-
-  const data = await res.json();
-
-  return data.items;
-};
-
 export default async function Home() {
-  const data = await fetchData();
+  const data = await fetchData(
+    `search?part=snippet&q=New&regionCode=VN&maxResults=50&order=date`
+  );
 
   return (
     <div className="flex flex-col gap-3 flex-1 w-full flex-wrap lg:flex-row sm:pl-24 md:pl-32 pl-8 sm:justify-start justify-center ">
-      {data.map((video: any, index: any) => (
+      {data?.items.map((video: any) => (
         <div
           key={video?.id?.videoId}
           className="flex flex-col gap-3 w-[300px] p-4 "
