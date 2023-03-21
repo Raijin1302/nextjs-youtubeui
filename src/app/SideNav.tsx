@@ -44,7 +44,7 @@ const MenuItem: Array<MenuItem> = [
 function SideNav() {
   const pathname = usePathname();
   return (
-    <div className="p-1 lg:px-2 2xl:grid-cols-5 xl:w-[200px] w-[100px] ">
+    <div className="p-1 lg:px-2  xl:w-[200px] w-[100px] ">
       {MenuItem.map((item) => (
         <Link key={item.name} href={item.pathname}>
           <div
