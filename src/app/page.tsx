@@ -1,14 +1,15 @@
-import Image from "next/image";
-import { Inter } from "next/font/google";
-import { feedVideos } from "./utils/data";
-import fetchData from "./utils/fetchData";
-const inter = Inter({ subsets: ["latin"] });
+import Image from "next/image"
+import { Inter } from "next/font/google"
+import { feedVideos } from "./lib/data"
+import fetchData from "./lib/fetchData"
+import Container from "./components/Container"
+const inter = Inter({ subsets: ["latin"] })
 export default async function Home() {
   const data = await fetchData(
     `search?part=snippet&q=us&regionCode=VN&maxResults=50&order=date`
-  );
+  )
 
-  const { items } = data;
+  const { items } = data
 
   return (
     <div className="grid 2xl:grid-cols-5 xl:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-3 w-full h-auto sm:pr-none pr-8 ">
@@ -49,5 +50,5 @@ export default async function Home() {
         </div>
       ))}
     </div>
-  );
+  )
 }

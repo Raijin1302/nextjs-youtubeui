@@ -1,12 +1,13 @@
-"use client";
-import { useState } from "react";
-import { BsYoutube, BsMicFill, BsBell, BsCameraVideo } from "react-icons/bs";
-import { HiOutlineMenu } from "react-icons/hi";
-import { BiSearch } from "react-icons/bi";
-import Image from "next/image";
+"use client"
+import { useState } from "react"
+import { BsYoutube, BsMicFill, BsBell, BsCameraVideo } from "react-icons/bs"
+import { HiOutlineMenu } from "react-icons/hi"
+import { BiSearch } from "react-icons/bi"
+import Image from "next/image"
+import Button from "./components/ui/Button"
 function TopNav() {
-  const [searchTerm, setSearchTerm] = useState("");
-
+  const [searchTerm, setSearchTerm] = useState("")
+  const [isLoading, setIsLoading] = useState<boolean>(false)
   return (
     <div className="flex justify-between items-center border-2 border-red-400 p-4 ">
       <div className="flex items-center gap-6 ">
@@ -47,9 +48,10 @@ function TopNav() {
           alt="user image"
           className="rounded-full object-contain cursor-pointer"
         />
+        <Button isLoading={isLoading}>Sign In</Button>
       </div>
     </div>
-  );
+  )
 }
 
-export default TopNav;
+export default TopNav
