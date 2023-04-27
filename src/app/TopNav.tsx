@@ -4,8 +4,9 @@ import { BsYoutube, BsMicFill, BsBell, BsCameraVideo } from "react-icons/bs"
 import { HiOutlineMenu } from "react-icons/hi"
 import { BiSearch } from "react-icons/bi"
 import Image from "next/image"
-import Button from "./components/ui/Button"
-import ThemeToggle from "./components/ThemeToggle"
+import Button from "@/components/ui/Button"
+import ThemeToggle from "@/components/ThemeToggle"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 function TopNav() {
   const [searchTerm, setSearchTerm] = useState("")
   const [isLoading, setIsLoading] = useState<boolean>(false)
@@ -45,13 +46,10 @@ function TopNav() {
           <div className="p-3 rounded-full hover:bg-zinc-500 cursor-pointer ">
             <BsCameraVideo size={22} />
           </div>
-          <Image
-            src="https://pbs.twimg.com/profile_images/1322962670010527746/PABkD-G4_400x400.jpg"
-            height={40}
-            width={40}
-            alt="user image"
-            className="rounded-full object-contain cursor-pointer"
-          />
+          <Avatar>
+            <AvatarImage src="https://github.com/shadcn.png" />
+            <AvatarFallback>CN</AvatarFallback>
+          </Avatar>
           <ThemeToggle />
           <Button>Sign In</Button>
         </div>

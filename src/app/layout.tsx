@@ -3,9 +3,8 @@ import "./globals.css"
 import SideNav from "./SideNav"
 import TopNav from "./TopNav"
 import { Roboto } from "next/font/google"
-import { cn } from "./lib/utils"
-import Providers from "./components/Providers"
-
+import Providers from "@/components/Providers"
+import { cn } from "@/lib/utils"
 const roboto = Roboto({
   variable: "--font-inter",
   weight: ["300", "400", "500", "700"],
@@ -32,7 +31,7 @@ export default function RootLayout({
     >
       <body className="font-Roboto min-h-screen hide-scrollbar antialiased bg-white dark:bg-slate-900">
         <Providers>
-          <div>
+          <div className="pt-20">
             <TopNav />
             <div className="flex flex-1 ">
               <SideNav />

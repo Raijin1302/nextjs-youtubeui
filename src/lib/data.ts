@@ -1,9 +1,9 @@
 interface IFeedVideo {
-  thumbnailUrl: string;
-  channelName: string;
-  title: string;
-  viewCount: number;
-  createdAt: Date;
+  thumbnailUrl: string
+  channelName: string
+  title: string
+  viewCount: number
+  createdAt: Date
 }
 
 export const feedVideos: Array<IFeedVideo> = [
@@ -119,4 +119,4 @@ export const feedVideos: Array<IFeedVideo> = [
     viewCount: 32981,
     createdAt: new Date(),
   },
-];
+]
