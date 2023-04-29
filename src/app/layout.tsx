@@ -25,7 +25,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={cn(
-        "bg-white dark:bg-gray-800 text-slate-900 antialiased",
+        "bg-white dark:bg-slate-900 text-slate-900 antialiased",
         roboto.variable
       )}
     >

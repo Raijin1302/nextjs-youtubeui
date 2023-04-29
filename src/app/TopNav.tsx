@@ -3,10 +3,11 @@ import { useState } from "react"
 import { BsYoutube, BsMicFill, BsBell, BsCameraVideo } from "react-icons/bs"
 import { HiOutlineMenu } from "react-icons/hi"
 import { BiSearch } from "react-icons/bi"
-import Image from "next/image"
+import Icons from "@/components/Icons"
+
 import Button from "@/components/ui/Button"
 import ThemeToggle from "@/components/ThemeToggle"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/Avatar"
 function TopNav() {
   const [searchTerm, setSearchTerm] = useState("")
   const [isLoading, setIsLoading] = useState<boolean>(false)
@@ -14,7 +15,7 @@ function TopNav() {
     <div className="flex justify-between items-center fixed backdrop-blur-sm bg-white dark:bg-slate-900/75 z-50 top-0 inset-x-0 h-20 border-b border-slate-300 dark:border-slate-700 shadow-sm  ">
       <div className="container max-w-full mx-auto w-full flex justify-between items-center">
         <div className="flex items-center gap-6 ">
-          <HiOutlineMenu size={26} />
+          <Icons.Menu className="relative flex h-10 w-10 shrink-0" />
           <div className="flex items-center gap-1">
             <BsYoutube size={30} className="text-red-500" />
             <span className="text-xl font-semibold text-black dark:text-white">
