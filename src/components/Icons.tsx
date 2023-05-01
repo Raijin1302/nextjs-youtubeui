@@ -5,6 +5,7 @@ import {
   Moon,
   Laptop,
   Menu,
+  Youtube,
 } from "lucide-react"
 
 export const Icons = {
@@ -14,5 +15,6 @@ export const Icons = {
   Moon,
   Laptop,
   Menu,
+  Youtube,
 }
 export default Icons

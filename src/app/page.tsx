@@ -9,7 +9,7 @@ export default async function Home() {
   // const { items } = data
 
   return (
-    <div className="grid 2xl:grid-cols-5 xl:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-3 w-full h-auto sm:pr-none pr-8 ">
+    <div className="grid 2xl:grid-cols-5 xl:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-3 w-full h-auto sm:pr-none pr-8  ">
       {data?.items.map((video: any) => (
         <div key={video?.id?.videoId} className="flex flex-col gap-4 p-4 ">
           <Image
@@ -30,17 +30,13 @@ export default async function Home() {
             </div>
             <div className="flex flex-col gap-1 flex-1">
               <div>
-                <h3 className="font-semibold text-white">
+                <h3 className="font-semibold text-slate-900 dark:text-slate-100">
                   {video?.snippet?.title}
                 </h3>
               </div>
-              <div className="text-sm text-zinc-400">
-                <a href="">{video.channelName}</a>
-                <div className="flex gap-1">
-                  <span>{video.viewCount}</span>
-                  <span>·</span>
-                  <span>{video?.snippet?.publishedAt}</span>
-                </div>
+              <div className="flex flex-col text-sm text-zinc-400">
+                <a href="">{video?.snippet?.channelTitle}</a>
+                <p>{video?.snippet?.publishTime}</p>
               </div>
             </div>
           </div>
