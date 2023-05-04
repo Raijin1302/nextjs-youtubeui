@@ -8,8 +8,8 @@ import Icons from "@/components/Icons"
 import Button from "@/components/ui/Button"
 import ThemeToggle from "@/components/ThemeToggle"
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/Avatar"
+import Searchbar from "@/components/Searchbar"
 function TopNav() {
-  const [searchTerm, setSearchTerm] = useState("")
   const [isLoading, setIsLoading] = useState<boolean>(false)
   return (
     <div className="flex justify-between items-center fixed backdrop-blur-sm  z-50 top-0 inset-x-0 h-20 border-b border-slate-300 dark:border-slate-700 shadow-sm  bg-white dark:bg-slate-900/75 ">
@@ -24,17 +24,7 @@ function TopNav() {
           </div>
         </div>
         <div className="md:flex hidden min-w-[300px] lg:w-[550px]">
-          <div className="w-full flex">
-            <input
-              placeholder="Searching....!"
-              className=" w-full px-4 py-2 text-zinc-200 bg-zinc-800 border-[1px] border-zinc-800 placeholder:text-zinc-500 rounded-tl-full rounded-bl-full focus:outline-none focus:ring-1 focus:ring-sky-500"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
-            <div className="bg-zinc-700 px-5 py-3 rounded-tr-full rounded-br-full">
-              <BiSearch size={20} />
-            </div>
-          </div>
+          <Searchbar />
           <div className="ml-2 p-4 bg-zinc-800 rounded-full hover:bg-zinc-500 cursor-pointer ">
             <BsMicFill />
           </div>

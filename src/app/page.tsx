@@ -9,7 +9,7 @@ export default async function Home() {
   // const { items } = data
 
   return (
-    <div className="grid 2xl:grid-cols-5 xl:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-3 w-full h-auto sm:pr-none pr-8  ">
+    <div className="grid 2xl:grid-cols-5 xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-3 w-full h-auto sm:pr-none pr-8  ">
       {data?.items.map((video: any) => (
         <div key={video?.id?.videoId} className="flex flex-col gap-4 p-4 ">
           <Image
@@ -17,8 +17,9 @@ export default async function Home() {
             alt="thumbnailUrl"
             height={200}
             width={600}
+            className="rounded-md"
           />
-          <div className="flex mt-3 gap-2">
+          <div className="flex mt-3 gap-2 justify-center ">
             <div>
               <Image
                 src="https://pbs.twimg.com/profile_images/1322962670010527746/PABkD-G4_400x400.jpg"
@@ -30,7 +31,7 @@ export default async function Home() {
             </div>
             <div className="flex flex-col gap-1 flex-1">
               <div>
-                <h3 className="font-semibold text-slate-900 dark:text-slate-100">
+                <h3 className="font-medium text-slate-900 dark:text-slate-100">
                   {video?.snippet?.title}
                 </h3>
               </div>
