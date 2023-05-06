@@ -1,18 +1,18 @@
-"use client";
-import React from "react";
-import { IconType } from "react-icons/lib";
-import { BiCodeAlt } from "react-icons/bi";
-import { HiHome } from "react-icons/hi";
-import { usePathname } from "next/navigation";
-import { TfiYoutube } from "react-icons/tfi";
-import { BsCollectionPlay } from "react-icons/bs";
-import { AiOutlineYoutube } from "react-icons/ai";
-import { BiPlayCircle } from "react-icons/bi";
-import Link from "next/link";
+"use client"
+import React from "react"
+import { IconType } from "react-icons/lib"
+import { BiCodeAlt } from "react-icons/bi"
+import { HiHome } from "react-icons/hi"
+import { usePathname } from "next/navigation"
+import { TfiYoutube } from "react-icons/tfi"
+import { BsCollectionPlay } from "react-icons/bs"
+import { AiOutlineYoutube } from "react-icons/ai"
+import { BiPlayCircle } from "react-icons/bi"
+import Link from "next/link"
 interface MenuItem {
-  name: string;
-  icon: IconType;
-  pathname: string;
+  name: string
+  icon: IconType
+  pathname: string
 }
 
 const MenuItem: Array<MenuItem> = [
@@ -40,16 +40,16 @@ const MenuItem: Array<MenuItem> = [
     name: "YouTube Music",
     pathname: "/music",
   },
-];
+]
 function SideNav() {
-  const pathname = usePathname();
+  const pathname = usePathname()
   return (
-    <div className="p-1 lg:px-2  xl:w-[200px] w-[100px] ">
+    <div className=" container pt-24 xl:w-[200px] w-[95px] sm:flex hidden flex-col fixed left-0 top-0 h-screen bg-white dark:bg-slate-900 ">
       {MenuItem.map((item) => (
         <Link key={item.name} href={item.pathname}>
           <div
-            className={`sm:flex hidden flex-col xl:flex-row p-4 xl:py-3 gap-1 xl:gap-6 items-center hover:bg-zinc-700 rounded-md cursor-pointer ${
-              item.pathname === pathname && "bg-zinc-600 "
+            className={`sm:flex hidden flex-col xl:flex-row p-4 xl:py-3 gap-1 xl:gap-6 items-center hover:bg-zinc-500 hover:dark:bg-zinc-700 rounded-md cursor-pointer font-medium text-slate-900 dark:text-slate-100 ${
+              item.pathname === pathname && "bg-zinc-500 "
             }`}
           >
             <item.icon size={25} />
@@ -60,7 +60,7 @@ function SideNav() {
         </Link>
       ))}
     </div>
-  );
+  )
 }
 
-export default SideNav;
+export default SideNav

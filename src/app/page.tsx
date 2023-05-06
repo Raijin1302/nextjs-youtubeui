@@ -9,7 +9,7 @@ export default async function Home() {
   // const { items } = data
 
   return (
-    <div className="grid 2xl:grid-cols-5 xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-3 w-full h-auto sm:pr-none pr-8  ">
+    <div className="grid 2xl:grid-cols-5 xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-3 w-full h-auto   ">
       {data?.items.map((video: any) => (
         <div key={video?.id?.videoId} className="flex flex-col gap-4 p-4 ">
           <Image

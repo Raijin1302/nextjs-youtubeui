@@ -33,7 +33,7 @@ export default function RootLayout({
         <Providers>
           <div className="pt-20">
             <TopNav />
-            <div className="flex flex-1 ">
+            <div className="flex flex-1 xl:pl-48 sm:pl-24 pl-none ">
               <SideNav />
               <div>{children}</div>
             </div>
