@@ -29,7 +29,7 @@ export default function RootLayout({
         roboto.variable
       )}
     >
-      <body className="font-Roboto min-h-screen hide-scrollbar antialiased bg-white dark:bg-slate-900">
+      <body className="font-Roboto min-h-screen pt-12 hide-scrollbar antialiased bg-white dark:bg-slate-900">
         <Providers>
           <div className="pt-20">
             <TopNav />

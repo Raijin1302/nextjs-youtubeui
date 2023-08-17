@@ -4,11 +4,17 @@ import { BsYoutube, BsMicFill, BsBell, BsCameraVideo } from "react-icons/bs"
 import { HiOutlineMenu } from "react-icons/hi"
 import { BiSearch } from "react-icons/bi"
 import Icons from "@/components/Icons"
-
-import Button from "@/components/ui/Button"
+import Button, { buttonVariants } from "@/components/ui/Button"
 import ThemeToggle from "@/components/ThemeToggle"
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/Avatar"
 import Searchbar from "@/components/Searchbar"
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/HoverCard"
+import Link from "next/link"
+import SearchFind from "@/components/Searchfind"
 function TopNav() {
   const [isLoading, setIsLoading] = useState<boolean>(false)
   return (
@@ -24,25 +30,34 @@ function TopNav() {
           </div>
         </div>
         <div className="md:flex hidden min-w-[300px] lg:w-[550px]">
-          <Searchbar />
+          {/* <Searchbar /> */}
+          <SearchFind />
           <div className="ml-2 p-4 bg-zinc-800 rounded-full hover:bg-zinc-500 cursor-pointer ">
             <BsMicFill />
           </div>
         </div>
 
-        <div className="flex gap-3">
-          <div className="p-3 rounded-full hover:bg-zinc-500 cursor-pointer ">
-            <BsBell size={22} />
-          </div>
-          <div className="p-3 rounded-full hover:bg-zinc-500 cursor-pointer ">
-            <BsCameraVideo size={22} />
-          </div>
+        <div className="flex gap-3 items-center">
+          <HoverCard>
+            <HoverCardTrigger className="p-3 rounded-full hover:bg-zinc-500 cursor-pointer ">
+              <BsBell size={22} />
+            </HoverCardTrigger>
+            <HoverCardContent>Notifications</HoverCardContent>
+          </HoverCard>
+          <HoverCard>
+            <HoverCardTrigger className="p-3 rounded-full hover:bg-zinc-500 cursor-pointer ">
+              <BsCameraVideo size={22} />
+            </HoverCardTrigger>
+            <HoverCardContent>Create</HoverCardContent>
+          </HoverCard>
           <Avatar>
             <AvatarImage src="https://github.com/shadcn.png" />
             <AvatarFallback>CN</AvatarFallback>
           </Avatar>
           <ThemeToggle />
-          <Button>Sign In</Button>
+          <Link href="/login" className={buttonVariants()}>
+            Sign In
+          </Link>
         </div>
       </div>
     </div>
