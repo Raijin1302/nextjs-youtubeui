@@ -44,7 +44,7 @@ const MenuItem: Array<MenuItem> = [
 function SideNav() {
   const pathname = usePathname()
   return (
-    <div className=" container pt-24 xl:w-[200px] w-[95px] sm:flex hidden flex-col fixed left-0 top-0 h-screen bg-white dark:bg-slate-900 ">
+    <div className=" container py-24 sm:max-w-fit sm:flex hidden flex-col fixed left-0 top-0 h-screen bg-white dark:bg-slate-900 ">
       {MenuItem.map((item) => (
         <Link key={item.name} href={item.pathname}>
           <div

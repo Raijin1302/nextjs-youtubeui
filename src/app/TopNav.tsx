@@ -7,19 +7,18 @@ import Icons from "@/components/Icons"
 import Button, { buttonVariants } from "@/components/ui/Button"
 import ThemeToggle from "@/components/ThemeToggle"
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/Avatar"
-import Searchbar from "@/components/Searchbar"
 import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
 } from "@/components/ui/HoverCard"
 import Link from "next/link"
-import SearchFind from "@/components/Searchfind"
+import SearchFind from "@/components/SearchFind"
 function TopNav() {
   const [isLoading, setIsLoading] = useState<boolean>(false)
   return (
-    <div className="flex justify-between items-center fixed backdrop-blur-sm z-50 top-0 inset-x-0 h-20 border-b border-slate-300 dark:border-slate-700 shadow-sm  bg-white dark:bg-slate-900 ">
-      <div className="container max-w-full mx-auto w-full flex justify-between items-center">
+    <div className="fixed backdrop-blur-sm top-0 inset-x-0 h-fit border-b border-slate-300 dark:border-slate-700 shadow-sm  bg-white dark:bg-slate-900 z-[10] py-3 ">
+      <div className="container max-w-full mx-auto h-full flex justify-between items-center gap-2">
         <div className="flex items-center gap-6 ">
           <Icons.Menu className="relative flex h-6 w-6 dark:text-slate-200" />
           <div className="flex items-center gap-1">
