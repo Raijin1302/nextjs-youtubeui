@@ -2,26 +2,27 @@ import { FC } from "react"
 import Link from "next/link"
 import { buttonVariants } from "@/components/ui/Button"
 import Icons from "@/components/Icons"
+import { cn } from "@/lib/utils"
+import { ChevronLeft } from "lucide-react"
+import SignIn from "@/components/SignIn"
 
 interface pageProps {}
 
 const page: FC<pageProps> = ({}) => {
   return (
-    <div className="absolute inset-0 mx-auto container flex h-screen flex-col items-center justify-center ">
-      <div className="mx-auto flex w-full flex-col justify-center space-y-6 max-w-lg ">
-        <div className="flex flex-col items-center gap-6 text-center">
-          <Link
-            href="/"
-            className={buttonVariants({
-              variant: "default",
-              className: "w-fit",
-            })}
-          >
-            <Icons.ChevronLeft className="mr-2 h-4 w-4" /> Back to Home
-          </Link>
-          <h2>Welcome back !</h2>
-          <p>Please sign in using your social account</p>
-        </div>
+    <div className="absolute bottom-1/2 left-[40%]">
+      <div className="h-full max-w-2xl mx-auto flex flex-col items-center justify-center gap-20">
+        <Link
+          href="/"
+          className={cn(
+            buttonVariants({ variant: "ghost" }),
+            "self-start -mt-20"
+          )}
+        >
+          <ChevronLeft className="mr-2 h-4 w-4" />
+          Home
+        </Link>
+        <SignIn />
       </div>
     </div>
   )

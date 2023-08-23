@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/HoverCard"
 import Link from "next/link"
 import SearchFind from "@/components/SearchFind"
+import { Bell, Video } from "lucide-react"
 function TopNav() {
   const [isLoading, setIsLoading] = useState<boolean>(false)
   return (
@@ -39,13 +40,13 @@ function TopNav() {
         <div className="flex gap-3 items-center">
           <HoverCard>
             <HoverCardTrigger className="p-3 rounded-full hover:bg-zinc-500 cursor-pointer ">
-              <BsBell size={22} />
+              <Bell className="mr-2 h-4 w-4" />
             </HoverCardTrigger>
             <HoverCardContent>Notifications</HoverCardContent>
           </HoverCard>
           <HoverCard>
             <HoverCardTrigger className="p-3 rounded-full hover:bg-zinc-500 cursor-pointer ">
-              <BsCameraVideo size={22} />
+              <Video className="mr-2 h-4 w-4" />
             </HoverCardTrigger>
             <HoverCardContent>Create</HoverCardContent>
           </HoverCard>
