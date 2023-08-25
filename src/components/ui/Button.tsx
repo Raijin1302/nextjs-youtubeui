@@ -30,7 +30,7 @@ export const buttonVariants = cva(
 interface ButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
-  isLoading?: false
+  isLoading?: boolean
 }
 
 const Button: FC<ButtonProps> = forwardRef<HTMLButtonElement, ButtonProps>(
